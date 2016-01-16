@@ -1,0 +1,14 @@
+# Zookeeper
+# https://registry.hub.docker.com/u/jplock/zookeeper/
+zookeeper:
+  image: jplock/zookeeper:3.4.6
+  ports:
+    - 2181:2181
+
+web:
+  image: dylanmei/zk-web
+  links:
+    - zookeeper:zookeeper
+  ports:
+    - 8080:8080
+
